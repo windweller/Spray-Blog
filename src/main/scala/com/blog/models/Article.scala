@@ -38,4 +38,21 @@ class ArticleTable(tag: Tag) extends Table[Article](tag, "Articles") {
     query.take(number).list
   }
 
+  /* Insert a new Article  */
+  /* takes in an Article, return the Article with auto id attached  */
+  def insert(article: Article)(implicit s: Session): Article = {
+    val articleId = articles returning articles.map(_.id) += article
+    article.copy(id = articleId)
+  }
+
+  def takePinned(implicit s: Session) = {
+    val query = for(a <- articles if a.pinned === true && a.isDraft === false) yield a
+    query.list
+  }
+
+  def get(id: Int)(implicit s: Session) = {
+    val query = for(a <- articles if a.id === id && a.isDraft === false) yield a
+    query.list
+  }
+
 }
