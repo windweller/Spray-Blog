@@ -1,9 +1,10 @@
-package com.example
+package com.blog
 
 import org.specs2.mutable.Specification
 import spray.testkit.Specs2RouteTest
 import spray.http._
 import StatusCodes._
+import com.blog.api.MyService
 
 class MyServiceSpec extends Specification with Specs2RouteTest with MyService {
   def actorRefFactory = system

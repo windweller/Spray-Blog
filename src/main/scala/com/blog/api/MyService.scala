@@ -1,4 +1,4 @@
-package com.example
+package com.blog.api
 
 import akka.actor.Actor
 import spray.routing._
@@ -18,7 +18,6 @@ class MyServiceActor extends Actor with MyService {
   // or timeout handling
   def receive = runRoute(myRoute)
 }
-
 
 // this trait defines our service behavior independently from the service actor
 trait MyService extends HttpService {
