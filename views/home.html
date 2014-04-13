@@ -6,7 +6,11 @@
     <title>Windweller's Castle | Welcome</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/foundation-icons.css" />
-    <script src="js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="css/animate.css">
+
+    <link rel="stylesheet" href="css/weatherModule.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script src="js/modernizr.js"></script>
   </head>
   <body>
     
@@ -14,52 +18,66 @@
     <br>
     <br>
     <br> 
+
+    <!-- Chatting window -->
     
     <div class="row">
-      <div class="large-12 columns">
-      	<div class="panel">
-	        <h3>We&rsquo;re stoked you want to try Foundation! </h3>
-	        <p>To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.</p>
-	        <p>Once you've exhausted the fun in this document, you should check out:</p>
+      <div class="large-8 large-offset-2 columns">
+      	<div class="chatting-window panel" id="chatting-window">
+          <!-- Chatting takes place -->
       	</div>
       </div>
     </div>
 
     <br>
 
-    <div class="row">
+    <!-- conversation bar -->
+    <div class="row" id="input-area">
       <div class="large-12 columns">
         <form>
         <div class="row collapse">
           <div class="small-3 large-2 columns">
-            <span class="prefix">Normal Mode: </span>
+            <span class="prefix normal">Normal Mode: </span>
           </div>
           <div class="small-7 large-8 columns">
             <input type="text" placeholder="Start your conversation...">
           </div>
           <div class="small-2 large-2 columns">
-            <a href="#" class="button postfix"><i class="fi-play"></i></a>
+            <a href="#" class="button postfix"><i class="fi-play size-21"></i></a>
           </div>
         </div>
       </form>
       </div>
     </div>
 
+    <!-- Home filler module -->
     <div class="row text-center">
       <div class="large-12 columns">
         <h1>Welcome to the Castle</h1>
         <br>
         <div class="row">
-          <div class="large-8 large-offset-2 columns">
+          <div class="large-8 large-offset-2 columns" id="welcomeFiller">
               <p>Please try out our one and only service: Billy. Try to type some commands or sentences. He will try his best to address your need.</p>
           </div>
         </div>
-
       </div>
     </div>
+
+    <!-- Search window module -->
+
+    <!-- Weather module -->
+    <div class="row">
+      <div class="large-8 large-offset-2 columns weather-module">
+        <div id="weather"></div>
+      </div>
+    </div>
+
     
-    <script src="js/vendor/jquery.js"></script>
+    <script src="js/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/2.6.0/jquery.simpleWeather.min.js"></script> -->
+    <script src="js/jquery.simpleWeather.min.js"></script>
+    <script src="js/home.js"></script>
     <script>
       $(document).foundation();
     </script>

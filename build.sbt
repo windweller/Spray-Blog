@@ -19,7 +19,8 @@ libraryDependencies ++= {
     "mysql"               % "mysql-connector-java" % "5.1.12",
     "com.typesafe.akka"   %%  "akka-actor"    % akkaV,
     "com.typesafe.akka"   %%  "akka-testkit"  % akkaV   % "test",
-    "org.specs2"          %%  "specs2"        % "2.2.3" % "test"
+    "org.specs2"          %%  "specs2"        % "2.2.3" % "test",
+    "cc.mallet"           % "mallet"          % "2.0.7-RC2"
   )
 }
 
