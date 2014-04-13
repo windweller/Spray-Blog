@@ -16,5 +16,25 @@ class UserActor extends Actor with UserService{
 }
 
 trait UserService extends HttpService{
-  val userRoutes = ???
+  val userRoutes =
+    path("user") {
+      get {
+        complete {
+          //return article from DB
+          "Article back"
+        }
+      } ~
+        post {
+          complete {
+            //add article to DB
+            ""
+          }
+        } ~
+        put {
+          complete {
+            //change existing articles
+            ""
+          }
+        }
+    }
 }
