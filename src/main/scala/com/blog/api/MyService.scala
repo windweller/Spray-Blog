@@ -25,11 +25,17 @@ trait MyService extends HttpService {
   val myRoute =
     path("") {
       get {
-//        respondWithMediaType(`text/html`) { // XML is marshalled to `text/xml` by default, so we simply override here
-//          complete {
-            getFromFile("/views/home.html")
-//          }
-//        }
+        getFromFile("views/home.html")
+      }
+    } ~
+    path("css" / Segment) {fileName =>
+        get {
+          getFromFile("views/css/"+fileName)
+        }
+    } ~
+    path("js" / Segment) {fileName =>
+      get {
+        getFromFile("views/js/"+fileName)
       }
     }
 }
