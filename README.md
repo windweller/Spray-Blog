@@ -1,5 +1,6 @@
 Billy - Spray Blog
 ==========
+https://www.codeship.io/projects/4bec1050-aed9-0131-cb28-52f111de9aa7/status
 
 First, Billy is not a library, but a service that is tightly integrated with other services such as blogging, file management, knowledge searching, Social Media managing. It designed as many modules. Currently Billy is built upon Spray (the HTTP server) and Scala. The interface of Billy is composed of HTML with JavaScript (jQuery) providing asynchronous service.
 
