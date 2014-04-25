@@ -1,10 +1,10 @@
-Spray-Blog
+Billy - Spray Blog
 ==========
 
-Full disclosure: this blog built upon Spray REST API and Slick.
+First, Billy is not a library, but a service that is tightly integrated with other services such as blogging, file management, knowledge searching, Social Media managing. It designed as many modules. Currently Billy is built upon Spray (the HTTP server) and Scala. The interface of Billy is composed of HTML with JavaScript (jQuery) providing asynchronous service.
 
-I used PlayFramework one year ago, first it's Java APIs, then I learned Scala, so I moved to Play's Scala API. Play is good, but slightly boring.
+Module in plan:
+...
 
-It's difficult because Play's system is tightly intertwined. So I choose to use Spray to build a REST-based blog.
-
-It's smooth like a sail.
+Library Dependency:
+...
