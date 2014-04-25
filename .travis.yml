@@ -7,3 +7,13 @@ jdk:
   - oraclejdk7
   - openjdk6
   - openjdk7
+  
+before_script:
+  - mysql -e 'create database SlickBlog;'
+  
+test:
+  adapter: mysql2
+  database: myapp_test
+  username: root
+  password: root
+  encoding: utf8
