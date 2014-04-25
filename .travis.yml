@@ -10,7 +10,7 @@ before_script:
   - mysql -e 'create database SlickBlog;'
   
 test:
-  adapter: mysql2
+  adapter: com.mysql.jdbc.Driver
   database: myapp_test
   username: root
   password: root
