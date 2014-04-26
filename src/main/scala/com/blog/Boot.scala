@@ -12,8 +12,6 @@ import models._
 object Boot extends App {
 
   //construct database tables
-
-  //change this part when actual deploy
   //can we just check if the database is established?
 
   DAL.databaseInit()
