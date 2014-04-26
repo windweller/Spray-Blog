@@ -6,14 +6,14 @@ import java.sql.Timestamp
 /**
  * Created by Aimingnie on 4/12/14.
  */
-object Article{
+object Article extends DBTable{
 
 case class Article(id: Option[Int] = None, title: String, author: String, content: String,
                    modifiedTime: Option[Timestamp] = None, createdTime: Option[Timestamp] = None,
                    pinned: Boolean = false, isDraft: Boolean = false, language: Byte = 0,
                    coverImage: Option[String] = None)
 
-class ArticleTable(tag: Tag) extends Table[Article](tag, "Articles") {
+class ArticleTable(tag: Tag) extends Table[Article](tag, "Article") {
 
   def id = column[Option[Int]]("ART_ID", O.PrimaryKey, O.AutoInc)
   def title = column[String]("ART_TITLE")
@@ -32,6 +32,8 @@ class ArticleTable(tag: Tag) extends Table[Article](tag, "Articles") {
 }
 
   val articles = TableQuery[ArticleTable]
+
+  override def getTableQuery: TableQuery[ArticleTable] = articles
 
   def take(number: Int)(implicit s: Session) = {
     val query = for(a <- articles if a.pinned === false && a.isDraft === false) yield a

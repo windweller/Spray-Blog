@@ -14,10 +14,17 @@ object DAL {
   val db = Database.forURL(url = config.getString("db.url"),
     user = config.getString("db.user"), password = config.getString("db.password"), driver = config.getString("db.driver"))
 
+  val currentTables = List[DBTable](Article, User)
+
   db.withSession{ implicit session =>
-    if (MTable.getTables("customers").list().isEmpty) {
+    if (MTable.getTables("Articles").list().isEmpty) {
       Article.articles.ddl.create
     }
+
+//    for (table <- currentTables) {
+//      if (MTable.getTables(table.getClass.getName.split("\\$").last).list().isEmpty)
+//        table.getTableQuery.ddl
+//    }
 
   }
 
