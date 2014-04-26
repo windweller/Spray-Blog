@@ -6,7 +6,7 @@ import java.sql.Timestamp
 /**
  * Created by Aimingnie on 4/12/14.
  */
-object Article extends DBTable{
+object Article {
 
 case class Article(id: Option[Int] = None, title: String, author: String, content: String,
                    modifiedTime: Option[Timestamp] = None, createdTime: Option[Timestamp] = None,
@@ -32,8 +32,6 @@ class ArticleTable(tag: Tag) extends Table[Article](tag, "Article") {
 }
 
   val articles = TableQuery[ArticleTable]
-
-  override def getTableQuery: TableQuery[ArticleTable] = articles
 
   def take(number: Int)(implicit s: Session) = {
     val query = for(a <- articles if a.pinned === false && a.isDraft === false) yield a

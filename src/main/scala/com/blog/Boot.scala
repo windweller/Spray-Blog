@@ -16,11 +16,7 @@ object Boot extends App {
   //change this part when actual deploy
   //can we just check if the database is established?
 
-//  Database.forURL("jdbc:mysql://localhost:3306/SprayBlog?characterEncoding=UTF-8", user="root", password="root", driver = "com.mysql.jdbc.Driver") withSession {
-//    implicit session =>
-//
-//      (Article.articles.ddl ++ User.users.ddl).create
-//  }
+  DAL.databaseInit()
 
   // we need an ActorSystem to host our application in
   implicit val system = ActorSystem("spray-blog")

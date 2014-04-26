@@ -20,11 +20,7 @@ libraryDependencies ++= {
     "com.typesafe.akka"   %%  "akka-actor"    % akkaV,
     "com.typesafe.akka"   %%  "akka-testkit"  % akkaV   % "test",
     "org.specs2"          %%  "specs2"        % "2.2.3" % "test",
-    "org.scalanlp" %% "breeze-math" % "0.1",
-    "org.scalanlp" %% "breeze-learn" % "0.1",
-    "org.scalanlp" %% "breeze-process" % "0.1",
-    "org.scalanlp" %% "breeze-viz" % "0.1"
-
+    "org.scalanlp"        %   "breeze_2.10"   % "0.7"
   )
 }
 

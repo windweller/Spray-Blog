@@ -6,7 +6,7 @@ import java.sql.Timestamp
 /**
  * Created by Aimingnie on 4/12/14.
  */
-object User extends DBTable{
+object User {
 
   case class User(id: Option[Int], name: Option[String], email: String, password: String, createdTime: Timestamp, auth_level: Byte, avatar: Option[String])
 
@@ -23,11 +23,7 @@ object User extends DBTable{
     def * = (id, name, email, password, createdTime, auth_level, avatar) <> (User.tupled, User.unapply _)
   }
 
-
-  override def getTableQuery:TableQuery[UserTable] = users
-
   val users = TableQuery[UserTable]
-
 
   def insert(user: User)(implicit s: Session): User = {
     val userId = (users returning users.map(_.id)) += user
