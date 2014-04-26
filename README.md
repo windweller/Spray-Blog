@@ -15,3 +15,4 @@ There are a list of modules that are being developed, or planned on building in 
 ##Dependency
 Right now there are libraries and frameworks that Billy depends upon:
 * [Jacana](https://code.google.com/p/jacana/): from Google code, handles part of Billy's Knowledge Search functionality, connecting to [FreeBase](freebase.com).
+* [CRF Tagger](https://github.com/tomtung/nlp-class/tree/master/hw4): developed by @tomgtung using Breeze. It will be modified to better suit the functionality of Billy in the future.
