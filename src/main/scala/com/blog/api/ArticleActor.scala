@@ -5,9 +5,6 @@ import spray.routing._
 import spray.http._
 import MediaTypes._
 
-/**
- * Created by Aimingnie on 4/12/14.
- */
 class ArticleActor extends Actor with ArticleService {
 
   def actorRefFactory = context

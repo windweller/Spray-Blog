@@ -1,0 +1,8 @@
+create_ACTC an_NUM article_CNT
+write_ACTC an_NUM article_CNT
+write_ACTC article_CNT
+create_ACTC article_CNT
+create article “report on Java”
+create article “special cases happen here”
+hey, write an article “I love you” for me
+Hello, create this article: “life is good”
