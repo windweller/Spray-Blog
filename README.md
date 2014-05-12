@@ -1,6 +1,6 @@
-#Sally (Billy) [![Build Status](https://travis-ci.org/windweller/Spray-Blog.svg?branch=Spray-Blog)](https://travis-ci.org/windweller/Spray-Blog)
+#Billy [![Build Status](https://travis-ci.org/windweller/Spray-Blog.svg?branch=Spray-Blog)](https://travis-ci.org/windweller/Spray-Blog)
 
-First, Sally is not a library, but a service that is tightly integrated with other services such as blogging, file management, knowledge searching, Social Media managing. Since it is the beta version, we call it Billy. It has a super modular design. All modules (except core modules) can be changed based on user's preference. Currently Billy is built upon Spray (the HTTP server) and Scala. The interface of Billy is composed of HTML with JavaScript (jQuery) providing asynchronous service.
+First, Billy is not a library, but a service that is tightly integrated with other services such as blogging, file management, knowledge searching, Social Media managing. Since it is the beta version, we call it Billy. It has a super modular design. All modules (except core modules) can be changed based on user's preference. Currently Billy is built upon Spray (the HTTP server) and Scala. The interface of Billy is composed of HTML with JavaScript (jQuery) providing asynchronous service.
 
 ##Module
 There are a list of modules that are being developed, or planned on building in the near future.
