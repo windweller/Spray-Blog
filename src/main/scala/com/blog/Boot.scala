@@ -1,7 +1,7 @@
 package com.blog
 
 import akka.actor.{ActorSystem, Props}
-import akka.io.IO
+import akka.io.{IO, Tcp}
 import spray.can.Http
 import com.blog.api.MyServiceActor
 
@@ -14,7 +14,7 @@ object Boot extends App {
   //construct database tables
   //can we just check if the database is established?
 
-  DAL.databaseInit()
+//  DAL.databaseInit()
 
   // we need an ActorSystem to host our application in
   implicit val system = ActorSystem("spray-blog")

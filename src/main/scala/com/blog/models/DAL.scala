@@ -18,8 +18,8 @@ object DAL {
     db.withSession{ implicit session =>
       if (MTable.getTables("Articles").list().isEmpty) {
         Article.articles.ddl.create
+        User.users.ddl.create
       }
-      User.users.ddl.create
   }
 
 //    for (table <- currentTables) {
