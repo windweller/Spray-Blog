@@ -9,7 +9,7 @@ import java.io.File
 
 // we don't implement our route structure directly in the service actor because
 // we want to be able to test it independently, without having to spin up an actor
-class MyServiceActor extends Actor with MyService {
+class MainServiceActor extends Actor with MainService {
 
   // the HttpService trait defines only one abstract member, which
   // connects the services environment to the enclosing actor or test
@@ -22,7 +22,7 @@ class MyServiceActor extends Actor with MyService {
 }
 
 // this trait defines our service behavior independently from the service actor
-trait MyService extends HttpService {
+trait MainService extends HttpService {
 
   val myRoute =
     path("") {
