@@ -1,6 +1,7 @@
 package com.blog.models
 
-import scala.slick.driver.MySQLDriver.simple._
+//import scala.slick.driver.MySQLDriver.simple._
+import scala.slick.driver.PostgresDriver.simple._
 import java.sql.Timestamp
 
 /**

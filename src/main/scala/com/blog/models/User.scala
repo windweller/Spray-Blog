@@ -1,11 +1,9 @@
 package com.blog.models
 
-import scala.slick.driver.MySQLDriver.simple._
+//import scala.slick.driver.MySQLDriver.simple._
+import scala.slick.driver.PostgresDriver.simple._
 import java.sql.Timestamp
 
-/**
- * Created by Aimingnie on 4/12/14.
- */
 object User {
 
   case class User(id: Option[Int], name: Option[String], email: String, password: String, createdTime: Timestamp, auth_level: Byte, avatar: Option[String])

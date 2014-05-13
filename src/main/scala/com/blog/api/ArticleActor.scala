@@ -5,15 +5,18 @@ import spray.routing._
 import spray.http._
 import MediaTypes._
 
+//handles all top level
+//article-related api calls
+//top level of article module
 class ArticleActor extends Actor with ArticleService {
 
   def actorRefFactory = context
 
-  def receive = runRoute(articleRoutes)
+  def receive = runRoute(routes)
 }
 
 trait ArticleService extends HttpService {
-  val articleRoutes =
+  def routes: Route =
     path("article") {
       get {
         complete {

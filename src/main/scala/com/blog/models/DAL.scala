@@ -1,7 +1,8 @@
 package com.blog.models
 
 import com.typesafe.config.ConfigFactory
-import scala.slick.driver.MySQLDriver.simple._
+//import scala.slick.driver.MySQLDriver.simple._
+import scala.slick.driver.PostgresDriver.simple._
 import scala.slick.jdbc.meta.MTable
 
 /**
@@ -10,9 +11,11 @@ import scala.slick.jdbc.meta.MTable
 object DAL {
 
   val config = ConfigFactory.load()
-
-  val db = Database.forURL(url = config.getString("db.url"),
-    user = config.getString("db.user"), password = config.getString("db.password"), driver = config.getString("db.driver"))
+  //either db.mysql._
+  //or db.postgresql._
+  val db = Database.forURL(url = config.getString("db.postgresql.url"),
+    user = config.getString("db.postgresql.user"), password= config.getString("db.postgresql.password"),
+    driver = config.getString("db.postgresql.driver"))
 
   def databaseInit() {
     db.withSession{ implicit session =>
@@ -20,11 +23,6 @@ object DAL {
         Article.articles.ddl.create
         User.users.ddl.create
       }
-  }
-
-//    for (table <- currentTables) {
-//      if (MTable.getTables(table.getClass.getName.split("\\$").last).list().isEmpty)
-//
-//    }
+    }
   }
 }

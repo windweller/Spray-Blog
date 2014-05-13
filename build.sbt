@@ -18,10 +18,9 @@ libraryDependencies ++= {
   Seq(
     "io.spray"            %   "spray-can"     % sprayV,
     "io.spray"            %   "spray-routing" % sprayV,
-    "io.spray"            %   "spray-testkit" % sprayV  % "test",
     "io.spray"            %%  "spray-json"    % "1.2.6",
     "org.json4s"          %% "json4s-native"  % "3.2.4",
-    "com.typesafe.slick"  %%  "slick"         % "2.0.1",
+    "com.typesafe.slick"  %%  "slick"         % "2.0.2",
     "mysql"               % "mysql-connector-java" % "5.1.12",
     "postgresql" % "postgresql" % "9.1-901.jdbc4",
     "com.typesafe.akka"   %%  "akka-actor"    % akkaV,

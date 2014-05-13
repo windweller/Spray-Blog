@@ -5,18 +5,17 @@ import spray.routing._
 import spray.http._
 import MediaTypes._
 
-/**
- * Created by Aimingnie on 4/12/14.
- */
+//handles all top level
+//user-related api calls
+//top level of user module
 class UserActor extends Actor with UserService{
 
   def actorRefFactory = context
-
-  def receive = runRoute(userRoutes)
+  def receive = runRoute(routes)
 }
 
 trait UserService extends HttpService{
-  val userRoutes =
+  def routes: Route =
     path("user") {
       get {
         complete {
