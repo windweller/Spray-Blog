@@ -20,14 +20,17 @@ libraryDependencies ++= {
     "io.spray"            %   "spray-routing" % sprayV,
     "io.spray"            %%  "spray-json"    % "1.2.6",
     "org.json4s"          %% "json4s-native"  % "3.2.4",
-    "com.typesafe.slick"  %%  "slick"         % "2.0.2",
-    "mysql"               % "mysql-connector-java" % "5.1.12",
-    "postgresql" % "postgresql" % "9.1-901.jdbc4",
     "com.typesafe.akka"   %%  "akka-actor"    % akkaV,
-    "com.typesafe.akka"   %%  "akka-testkit"  % akkaV   % "test",
     "com.typesafe.akka"   %% "akka-slf4j"     % akkaV,
+    "com.typesafe.akka"   %%  "akka-testkit"  % akkaV   % "test",
     "org.scalatest"       %% "scalatest"       % "2.1.5"  % "test",
-    "org.scalanlp"        %   "breeze_2.10"   % "0.7"
+    //add-ons
+    "org.scalanlp"        %   "breeze_2.10"   % "0.7",
+    "org.java-websocket" % "Java-WebSocket" % "1.3.0",
+    //database
+     "com.typesafe.slick" %%  "slick"         % "2.0.2",
+    "mysql"               % "mysql-connector-java" % "5.1.12",
+    "postgresql" % "postgresql" % "9.1-901.jdbc4"
   )
 }
 

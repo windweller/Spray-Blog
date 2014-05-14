@@ -1,21 +1,16 @@
 package com.blog.models
 
-import com.typesafe.config.ConfigFactory
 //import scala.slick.driver.MySQLDriver.simple._
 import scala.slick.driver.PostgresDriver.simple._
 import scala.slick.jdbc.meta.MTable
+import com.blog.Config._
 
-/**
- * Created by Aimingnie on 4/17/14.
- */
+
 object DAL {
 
-  val config = ConfigFactory.load()
   //either db.mysql._
   //or db.postgresql._
-  val db = Database.forURL(url = config.getString("db.postgresql.url"),
-    user = config.getString("db.postgresql.user"), password= config.getString("db.postgresql.password"),
-    driver = config.getString("db.postgresql.driver"))
+  val db = Database.forURL(url = dbURL, user = dbUser, password= dbPassword, driver = dbDriver)
 
   def databaseInit() {
     db.withSession{ implicit session =>
