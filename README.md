@@ -7,6 +7,7 @@ There are a list of modules that are being developed, or planned on building in 
 * Blogging Module - **active** | **being developed** 
 * Conversation Module - **planned**
 * Knowledge Search Module - **planned**
+* Geolocation Module - **planned**
 * File Management Module - **planned**
 * Social Platform Management Module - **planned**
 * Security Module - **planned**
