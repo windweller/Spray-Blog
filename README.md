@@ -18,6 +18,9 @@ There are a list of modules that are being developed, or planned on building in 
 * Security Module - **planned**
 * Personality Module - **planned**
 
+##Notice
+The view folder is temporarily removed and may be created as a different github project. View, just like the rest of modules can be seperated from the main structure easily. Unlike templates created for Ghost.js or Wordpress, view for Billy's blogging service only needs to subscribe our specific websocket channels. In the far far far future, we might provide our own blogging js library that fully wrap around our service. Essentially you should be able to render any content on your page with ease.
+
 ##Dependency
 Right now there are libraries and frameworks that Billy depends upon:
 * [Jacana](https://code.google.com/p/jacana/): from Google code, handles part of Billy's Knowledge Search functionality, connecting to [FreeBase](freebase.com).
