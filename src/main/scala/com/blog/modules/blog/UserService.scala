@@ -1,12 +1,40 @@
 package com.blog.modules.blog
 
-import akka.actor.{ActorSystem, ActorRef}
+import akka.actor.{ActorLogging, Actor, ActorSystem, ActorRef}
 import spray.routing.Directives
 
-/**
- * Created by Aimingnie on 5/14/14.
- */
+//TODO: fix/complete this User
 class UserService (userActor: ActorRef)(implicit system : ActorSystem) extends Directives {
+  lazy val route =
+    pathPrefix("user") {
+      get {
+        complete {
+          //return article from DB
+          "User back"
+        }
+      } ~
+      post {
+        complete {
+            //add article to DB
+            ""
+        }
+      } ~
+      put {
+        complete {
+          //change existing articles
+          ""
+        }
+      }
+    }
+}
+
+//This object stores message protocols
+object UserProtocol {
 
 }
 
+class UserActor extends Actor with ActorLogging {
+  def receive = {
+    case _ => log.info("...")
+  }
+}

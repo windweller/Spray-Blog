@@ -14,7 +14,7 @@ object DAL {
 
   def databaseInit() {
     db.withSession{ implicit session =>
-      if (MTable.getTables("Articles").list().isEmpty) {
+      if (MTable.getTables("Article").list().isEmpty) {
         Article.articles.ddl.create
         User.users.ddl.create
       }

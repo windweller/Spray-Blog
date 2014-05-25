@@ -43,3 +43,7 @@ assemblySettings
 
 // StartScript settings
 seq(SbtStartScript.startScriptForClassesSettings: _*)
+
+//Spray-Revolver Settings
+Revolver.settings
+

@@ -7,6 +7,12 @@
 	width: 100%;
 }
 
+/* Chatting module */
+
+.chatting-module {
+	margin-top: 3em;
+}
+
 .chatting-window {
 	background-color: #fff;
 	border-color: #fff;
@@ -83,8 +89,26 @@
 	z-index: 1;
 }
 
-/*Search window utility*/
+/* Home Filler Module */
 
+.home-filler {
+	margin-bottom: 15em;
+}
+
+/* Footer */
+footer {
+	position: relative;
+	margin-top: -3em;
+	padding-top: 3em;
+}
+
+.social-logos {
+	color: #000000;
+}
+
+.social-logos:hover {
+	color: #008cba;
+}
 
 
 /*Utility CSS*/
@@ -98,6 +122,7 @@
 }
 
 .size-21 { font-size: 21px; }
+.size-52 { font-size: 52px; }
 
 .mode-green {
     background-color: #368a54 !important;  /* this is a green */
@@ -121,4 +146,8 @@
 
 .pure-light-blue {
     background: rgb(66, 184, 221) !important; /* this is a light blue */
+}
+
+.black {
+	color: #000000;
 }

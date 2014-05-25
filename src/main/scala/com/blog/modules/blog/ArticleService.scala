@@ -30,7 +30,7 @@ class ArticleService(articleActor: ActorRef)(implicit system : ActorSystem) exte
     }
 }
 
-//This object stores message protocals
+//This object stores message protocols
 object ArticleProtocol {
 
 }

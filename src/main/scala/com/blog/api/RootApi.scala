@@ -30,12 +30,12 @@ trait StaticRoute extends Directives {
         getFromFile(new File("views/home.html"), `text/html`)
     } ~
       path("css" / Segment) {fileName =>
-          getFromFile(new File("views/css/"+fileName), `text/css`)
-      } ~
+        getFromFile(new File("views/css/"+fileName), `text/css`)
+    } ~
       path("js" / Segment) {fileName =>
         getFromFile(new File("views/js/"+fileName), `application/javascript`)
       } ~
-       path("img" / Segment) {fileName =>
+      path("img" / Segment) {fileName =>
          getFromFile(new File("img/"+fileName))
       } ~ complete(NotFound)
 }
