@@ -9,6 +9,7 @@ We welcome anyone who is interested. You can find contact email at the bottom of
 ##Module
 There are a list of modules that are being developed, or planned on building in the near future.
 * Blogging Module - **active** | **being developed** 
+* Computation Module (Octave) - **being developed**
 * Conversation Module - **planned**
 * Knowledge Search Module - **planned**
   - js supported chart data display
@@ -25,5 +26,6 @@ The view folder is temporarily removed and may be created as a different github 
 Right now there are libraries and frameworks that Billy depends upon:
 * [Jacana](https://code.google.com/p/jacana/): from Google code, handles part of Billy's Knowledge Search functionality, connecting to [FreeBase](freebase.com).
 * [CRF Tagger](https://github.com/tomtung/nlp-class/tree/master/hw4): developed by @tomgtung using Breeze. It will be modified to better suit the functionality of Billy in the future.
+* [Octave](http://www.gnu.org/software/octave/): Linear algebra library developed by GNU. Billy provides a frontend integration of native Octave syntax and render output. Billy will support plotting in the future, if possible.
 
 Contact: anie@emory.edu
