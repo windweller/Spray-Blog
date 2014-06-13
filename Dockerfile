@@ -19,6 +19,7 @@ ADD views/	/views
 ADD build.sbt /build.sbt
 
 # run spray server command
+ENTRYPOINT ['sbt', "run"]
 
 # the server binds to 8080 - expose that port
 EXPOSE 8080
