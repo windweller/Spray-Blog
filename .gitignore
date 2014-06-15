@@ -5,5 +5,7 @@ target/
 lib_managed/
 src_managed/
 test-output/
-*.iml
 /views
+*.jar
+*.iml
+*.txt

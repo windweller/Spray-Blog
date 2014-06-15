@@ -1,13 +1,14 @@
 package com.blog.api
 
-import akka.actor.{ ActorSystem, Props }
+import akka.actor.{Props, ActorSystem}
 import akka.event.Logging.InfoLevel
 import spray.http.HttpRequest
-import spray.http.StatusCodes.{ MovedPermanently, NotFound }
+import spray.http.StatusCodes.{MovedPermanently, NotFound }
 import spray.routing.{Directives, RouteConcatenation}
 import spray.routing.directives.LogEntry
 import java.io.File
 import spray.http.MediaTypes._
+import com.blog.modules.blog._
 
 trait AbstractSystem {
   implicit def system: ActorSystem
@@ -17,7 +18,15 @@ trait AbstractSystem {
 //each endpoint has been kept in its own class. The ReactiveApi trait constructs the classes for these
 // endpoints and then concatenates their respective routes.
 trait RootApi extends RouteConcatenation with StaticRoute with AbstractSystem {
+  this: MainActors =>
 
+  val rootService = system.actorOf(Props(new RootService(routes)))
+
+  lazy val routes = logRequest(showReq _) {
+    new ArticleService(articleActor).route ~
+    new UserService(userActor).route ~
+    staticRoute
+  }
 
   private def showReq(req : HttpRequest) = LogEntry(req.uri, InfoLevel)
 }
@@ -29,13 +38,19 @@ trait StaticRoute extends Directives {
     pathEndOrSingleSlash {
         getFromFile(new File("views/home.html"), `text/html`)
     } ~
-      path("css" / Segment) {fileName =>
+    path("css" / Segment) {fileName =>
         getFromFile(new File("views/css/"+fileName), `text/css`)
     } ~
-      path("js" / Segment) {fileName =>
-        getFromFile(new File("views/js/"+fileName), `application/javascript`)
-      } ~
-      path("img" / Segment) {fileName =>
+    path("css" / Segment / Segment) {(subFolder, fileName) =>
+        getFromFile(new File("views/css/"+ subFolder + "/" +fileName))
+    } ~
+    path("js" / Segment) {fileName =>
+      getFromFile(new File("views/js/" + fileName), `application/javascript`)
+    } ~
+    path("js" / Segment / Segment) { (subFolder, fileName) =>
+        getFromFile(new File("views/js/" + subFolder + "/" +fileName), `application/javascript`)
+    } ~
+    path("img" / Segment) {fileName =>
          getFromFile(new File("img/"+fileName))
-      } ~ complete(NotFound)
+    } ~ complete(NotFound)
 }

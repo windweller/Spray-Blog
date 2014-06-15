@@ -1,4 +1,4 @@
-package com.blog.app.nlp.CRF
+package com.blog.modules.nlp.CRF
 
 import collection.immutable.IndexedSeq
 

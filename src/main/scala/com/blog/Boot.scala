@@ -3,26 +3,25 @@ package com.blog
 import akka.actor.{ActorSystem, Props}
 import akka.io.{IO, Tcp}
 import spray.can.Http
-import com.blog.api.MainServiceActor
-import com.blog.Config._
+import com.blog.api._
 
 //import scala.slick.driver.MySQLDriver.simple._
 import models._
 
-object Boot extends App {
+object Boot extends App with MainActors with RootApi {
 
-  //construct database tables
-  //it needs improvement
-  DAL.databaseInit()
+  //construct database tables; it needs improvement
+  //  DAL.databaseInit()
 
-  // we need an ActorSystem to host our application in
-  implicit val system = ActorSystem("spray-blog")
+  implicit lazy val system = ActorSystem("spray-blog")
 
-  // create and start our service actor
-  val service = system.actorOf(Props[MainServiceActor], "spray-blog")
+  private val ws = new WsServer(Config.portWs)
+  ws.forResource("/chat/ws", Some(chatActor))
+  ws.start()
 
-  // start a new HTTP server on port 8080 with our service actor as the handler
-  IO(Http) ! Http.Bind(service, interface = host, port = portHTTP)
+  sys.addShutdownHook({system.shutdown(); ws.stop()})
+
+  IO(Http) ! Http.Bind(rootService, interface = Config.host, port = Config.portHTTP)
 }
 
 object Config {

@@ -1,5 +1,4 @@
-package com.blog.app.nlp.CRF
-
+package com.blog.modules.nlp.CRF
 /**
  * Created by tomtung
  * Source: https://github.com/tomtung/nlp-class/tree/master/hw4

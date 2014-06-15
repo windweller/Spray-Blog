@@ -1,4 +1,4 @@
-package com.blog.app.nlp.CRF
+package com.blog.modules.nlp.CRF
 
 /**
  * Created by Aimingnie on 4/26/14.

@@ -26,9 +26,8 @@ libraryDependencies ++= {
     "org.scalatest"       %% "scalatest"       % "2.1.5"  % "test",
     //add-ons
     "org.scalanlp"        %   "breeze_2.10"   % "0.7",
-    "org.java-websocket" % "Java-WebSocket" % "1.3.0",
     //database
-     "com.typesafe.slick" %%  "slick"         % "2.0.2",
+    "com.typesafe.slick" %%  "slick"         % "2.0.2",
     "mysql"               % "mysql-connector-java" % "5.1.12",
     "postgresql" % "postgresql" % "9.1-901.jdbc4"
   )
