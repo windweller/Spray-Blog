@@ -1,4 +1,4 @@
-package com.blog.modules.blog
+package com.blog.modules.user
 
 import akka.actor.{ActorLogging, Actor, ActorSystem, ActorRef}
 import spray.routing.Directives

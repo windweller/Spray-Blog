@@ -26,9 +26,11 @@ libraryDependencies ++= {
     "org.scalatest"       %% "scalatest"       % "2.1.5"  % "test",
     //add-ons
     "org.scalanlp"        %   "breeze_2.10"   % "0.7",
+    "joda-time" % "joda-time" % "2.3",
     //database
     "com.typesafe.slick" %%  "slick"         % "2.0.2",
-    "mysql"               % "mysql-connector-java" % "5.1.12",
+    "org.reactivemongo"  %%  "reactivemongo" % "0.10.0",
+    "mysql"               %  "mysql-connector-java" % "5.1.12",
     "postgresql" % "postgresql" % "9.1-901.jdbc4"
   )
 }

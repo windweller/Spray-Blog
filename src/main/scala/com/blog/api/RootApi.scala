@@ -9,6 +9,7 @@ import spray.routing.directives.LogEntry
 import java.io.File
 import spray.http.MediaTypes._
 import com.blog.modules.blog._
+import com.blog.modules.user.UserService
 
 trait AbstractSystem {
   implicit def system: ActorSystem

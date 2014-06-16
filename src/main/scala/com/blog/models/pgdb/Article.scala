@@ -1,8 +1,9 @@
-package com.blog.models
+package com.blog.models.pgdb
 
 //import scala.slick.driver.MySQLDriver.simple._
-import scala.slick.driver.PostgresDriver.simple._
 import java.sql.Timestamp
+
+import scala.slick.driver.PostgresDriver.simple._
 
 /**
  * Created by Aimingnie on 4/12/14.

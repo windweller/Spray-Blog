@@ -3,6 +3,7 @@ package com.blog.api
 import akka.actor.Props
 import com.blog.modules.blog._
 import com.blog.modules.chat._
+import com.blog.modules.user._
 
 /**
  * Created by Aimingnie on 5/14/14.
