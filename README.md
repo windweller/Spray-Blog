@@ -19,6 +19,11 @@ There are a list of modules that are being developed, or planned on building in 
 * Security Module - **planned**
 * Personality Module - **planned**
 
+##Architectual Design
+Billy is designed to be reactive, self-healing, and ability to reverse actions. It connects with three databases to mock the functionality of human memory. It uses PostgreSQL to mock the semantic memory, which tends to be more structural and fact-based. It uses MongoDB to mimic episodic memory, which tends to be unstable, and retrieved by associations (with many errors). At last, in order to speed up the program, and make the program itself remain as stateless as possible, Billy employs Reddit to persist its in-memory data.
+
+Billy builds upon Spray and Akka. Spray is perfect for routing and REST API design (which has been almost abandoned since Billy might use WebScoket to handle most of the front-back interactions).
+
 ##Notice
 The view folder is temporarily removed and may be created as a different github project. View, just like the rest of modules can be seperated from the main structure easily. Unlike templates created for Ghost.js or Wordpress, view for Billy's blogging service only needs to subscribe our specific websocket channels. In the far far far future, we might provide our own blogging js library that fully wrap around our service. Essentially you should be able to render any content on your page with ease.
 
