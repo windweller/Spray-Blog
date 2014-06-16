@@ -9,3 +9,4 @@ test-output/
 *.jar
 *.iml
 *.txt
+*.conf

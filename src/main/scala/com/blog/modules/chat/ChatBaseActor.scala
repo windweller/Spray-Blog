@@ -35,7 +35,8 @@ class ChatBaseActor extends Actor with ActorLogging{
         if(RawCookieUtil.parse(cookie).nonEmpty){
           //check database for the cookie value, if the browser has the cookie
           //match UUID with IP address
-          User.getByTokenAndIP(RawCookieUtil.parse(cookie).get, ip)
+
+//          User.getByTokenAndIP(RawCookieUtil.parse(cookie).get, ip)
 
         }else{ //don't have our cookie
 

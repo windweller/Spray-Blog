@@ -27,6 +27,7 @@ libraryDependencies ++= {
     //add-ons
     "org.scalanlp"        %   "breeze_2.10"   % "0.7",
     "joda-time" % "joda-time" % "2.3",
+    "org.joda" % "joda-convert" % "1.2",
     //database
     "com.typesafe.slick" %%  "slick"         % "2.0.2",
     "org.reactivemongo"  %%  "reactivemongo" % "0.10.0",
