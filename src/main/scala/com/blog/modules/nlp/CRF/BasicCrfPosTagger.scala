@@ -1,8 +1,5 @@
 package com.blog.modules.nlp.CRF
 
-/**
- * Created by Aimingnie on 4/26/14.
- */
 import breeze.linalg.{CSCMatrix, DenseMatrix, Matrix}
 
 class BasicCrfPosTagger(words: Set[String],

@@ -15,6 +15,7 @@ object DAL {
 
   val db = Database.forURL(url = dbURL, user = dbUser, password= dbPassword, driver = dbDriver)
 
+
   def databaseInit() {
     db.withSession{ implicit session =>
       if (MTable.getTables("Article").list().isEmpty) {

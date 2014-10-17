@@ -1,8 +1,5 @@
 package com.blog.modules.nlp.CRF
 
-/**
- * Created by Aimingnie on 4/26/14.
- */
 import breeze.linalg._
 import collection.immutable.IndexedSeq
 import collection.mutable

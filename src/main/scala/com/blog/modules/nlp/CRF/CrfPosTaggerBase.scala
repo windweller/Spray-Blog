@@ -1,8 +1,5 @@
 package com.blog.modules.nlp.CRF
 
-/**
- * Created by Aimingnie on 4/26/14.
- */
 import breeze.linalg.{DenseMatrix, Matrix}
 
 abstract class CrfPosTaggerBase(val tags: Set[String], random: util.Random = util.Random) extends PosTagger {

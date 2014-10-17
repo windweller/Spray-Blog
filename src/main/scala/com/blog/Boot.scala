@@ -35,9 +35,13 @@ object Config {
   val portTcp = config.getInt("service.ports.tcp")
   val portWs = config.getInt("service.ports.ws")
 
-  //database
+  //RDMS database
   val dbURL = config.getString("db.postgresql.url")
   val dbUser = config.getString("db.postgresql.user")
   val dbPassword = config.getString("db.postgresql.password")
   val dbDriver = config.getString("db.postgresql.driver")
+
+  //MongoDB
+  val dbHost = config.getString("db.mongodb.host")
+  val dbDatabase = config.getString("db.mongodb.database")
 }

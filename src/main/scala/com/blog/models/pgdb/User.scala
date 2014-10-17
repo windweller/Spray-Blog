@@ -6,7 +6,7 @@ import java.util.UUID
 
 import scala.slick.driver.PostgresDriver.simple._
 
-object User {
+object User{
 
   case class User(id: Option[Int], name: Option[String], email: String, password: String, userAssignedToken: String, createdTime: Timestamp, auth_level: Byte, avatar: Option[String])
 

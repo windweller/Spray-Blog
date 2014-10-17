@@ -9,13 +9,10 @@ import spray.routing.Directives
 import org.java_websocket.WebSocket
 import com.blog.models._
 
-/**
- * Created by Aimingnie on 6/5/14.
- */
 
 //Chat service completely depends on WS and not on REST
 //It doesn't extend and have Spray's Routing directive at all
-class ChatBaseActor extends Actor with ActorLogging{
+class ChatBaseActor extends Actor with ActorLogging {
   import com.blog.api.WsServerProt._
   import ChatBaseProtocol._
 

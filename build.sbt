@@ -10,7 +10,9 @@ version       := "0.1"
 scalaVersion  := "2.10.3"
 
 resolvers ++= Seq("Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/",
-  "Sonatype snapshots"  at "http://oss.sonatype.org/content/repositories/snapshots/")
+  "Sonatype releases" at "https://oss.sonatype.org/content/repositories/releases",
+  "Sonatype snapshots"  at "https://oss.sonatype.org/content/repositories/snapshots/"
+)
 
 libraryDependencies ++= {
   val akkaV = "2.1.4"
@@ -26,13 +28,12 @@ libraryDependencies ++= {
     "org.scalatest"       %% "scalatest"       % "2.1.5"  % "test",
     //add-ons
     "org.scalanlp"        %   "breeze_2.10"   % "0.7",
-    "joda-time" % "joda-time" % "2.3",
-    "org.joda" % "joda-convert" % "1.2",
+    "com.github.nscala-time" %% "nscala-time" % "1.2.0",
     //database
     "com.typesafe.slick" %%  "slick"         % "2.0.2",
-    "org.reactivemongo"  %%  "reactivemongo" % "0.10.0",
     "mysql"               %  "mysql-connector-java" % "5.1.12",
-    "postgresql" % "postgresql" % "9.1-901.jdbc4"
+    "postgresql" % "postgresql" % "9.1-901.jdbc4",
+    "org.mongodb" % "casbah_2.10" % "2.7.2"
   )
 }
 
