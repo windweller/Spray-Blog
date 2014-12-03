@@ -21,7 +21,7 @@ class WsServer (val port: Int) extends WebSocketServer(new InetSocketAddress(por
   override def onOpen(ws: WebSocket, hs: ClientHandshake): Unit = {
     if (null != ws) {
       reactors.get(ws.getResourceDescriptor) match {
-        case Some(actor) => actor ! WsServerProt.Open(ws, hs)
+        case Some(actor) => actor ! WsServerMsg.Open(ws, hs)
         case None => ws.close(CloseFrame.REFUSE)
       }
     }
@@ -30,7 +30,7 @@ class WsServer (val port: Int) extends WebSocketServer(new InetSocketAddress(por
   override def onError(ws: WebSocket, ex: Exception): Unit = {
     if (null != ws) {
       reactors.get(ws.getResourceDescriptor) match {
-        case Some(actor) => actor ! WsServerProt.Error(ws, ex)
+        case Some(actor) => actor ! WsServerMsg.Error(ws, ex)
         case None => ws.close(CloseFrame.REFUSE)
       }
     }
@@ -39,7 +39,7 @@ class WsServer (val port: Int) extends WebSocketServer(new InetSocketAddress(por
   override def onMessage(ws: WebSocket, msg: String) {
     if (null != ws) {
       reactors.get(ws.getResourceDescriptor) match {
-        case Some(actor) => actor ! WsServerProt.Message(ws, msg)
+        case Some(actor) => actor ! WsServerMsg.Message(ws, msg)
         case None => ws.close(CloseFrame.REFUSE)
       }
     }
@@ -48,14 +48,14 @@ class WsServer (val port: Int) extends WebSocketServer(new InetSocketAddress(por
   override def onClose(ws: WebSocket, code: Int, reason: String, remote: Boolean): Unit = {
     if (null != ws) {
       reactors.get(ws.getResourceDescriptor) match {
-        case Some(actor) => actor ! WsServerProt.Close(ws, code, reason, remote)
+        case Some(actor) => actor ! WsServerMsg.Close(ws, code, reason, remote)
         case None => ws.close(CloseFrame.REFUSE)
       }
     }
   }
 }
 
-object WsServerProt {
+object WsServerMsg {
   sealed trait ReactiveServerMessage
   case class Message(ws : WebSocket, msg : String)
     extends ReactiveServerMessage

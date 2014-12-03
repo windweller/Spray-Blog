@@ -1,6 +1,6 @@
 package com.blog.modules.user
 
-import akka.actor.{ActorLogging, Actor, ActorSystem, ActorRef}
+import akka.actor.{ActorSystem, ActorRef}
 import spray.routing.Directives
 
 //TODO: fix/complete this User
@@ -28,13 +28,3 @@ class UserService (userActor: ActorRef)(implicit system : ActorSystem) extends D
     }
 }
 
-//This object stores message protocols
-object UserProtocol {
-
-}
-
-class UserActor extends Actor with ActorLogging {
-  def receive = {
-    case _ => log.info("...")
-  }
-}

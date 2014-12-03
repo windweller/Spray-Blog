@@ -1,7 +1,7 @@
 package com.blog.modules.cli
 
 /**
- * Created by Aimingnie on 10/25/14.
+ * No HTTP routing
  */
 class CLIActor {
 

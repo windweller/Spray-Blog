@@ -9,9 +9,9 @@ import java.io.{File, PrintWriter}
 
 import scala.collection.mutable.ListBuffer
 
-class ProcessActor extends Actor with ActorLogging {
+class REPLActor extends Actor with ActorLogging {
 
-  import ProcessActorMsg._
+  import REPLActorMsg._
 
   val clients = ListBuffer[WebSocket]()
 
@@ -52,6 +52,6 @@ class ProcessActor extends Actor with ActorLogging {
   }
 }
 
-object ProcessActorMsg {
+object REPLActorMsg {
   case class Unregister(ws : WebSocket)
 }

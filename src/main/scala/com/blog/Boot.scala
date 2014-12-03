@@ -41,7 +41,4 @@ object Config {
   val dbPassword = config.getString("db.postgresql.password")
   val dbDriver = config.getString("db.postgresql.driver")
 
-  //MongoDB
-  val dbHost = config.getString("db.mongodb.host")
-  val dbDatabase = config.getString("db.mongodb.database")
 }

@@ -31,9 +31,7 @@ libraryDependencies ++= {
     "com.github.nscala-time" %% "nscala-time" % "1.2.0",
     //database
     "com.typesafe.slick" %%  "slick"         % "2.0.2",
-    "mysql"               %  "mysql-connector-java" % "5.1.12",
-    "postgresql" % "postgresql" % "9.1-901.jdbc4",
-    "org.mongodb" % "casbah_2.10" % "2.7.2"
+    "postgresql" % "postgresql" % "9.1-901.jdbc4"
   )
 }
 

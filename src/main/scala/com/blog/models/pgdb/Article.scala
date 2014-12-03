@@ -1,6 +1,5 @@
 package com.blog.models.pgdb
 
-//import scala.slick.driver.MySQLDriver.simple._
 import java.sql.Timestamp
 import scala.slick.driver.PostgresDriver.simple._
 

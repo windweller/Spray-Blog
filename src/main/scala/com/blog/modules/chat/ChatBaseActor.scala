@@ -13,11 +13,12 @@ import com.blog.models._
 //Chat service completely depends on WS and not on REST
 //It doesn't extend and have Spray's Routing directive at all
 class ChatBaseActor extends Actor with ActorLogging {
-  import com.blog.api.WsServerProt._
-  import ChatBaseProtocol._
+  import com.blog.api.WsServerMsg._
+  import ChatBaseMsg._
 
   val clients = ListBuffer[WebSocket]()
 
+  //goes to either CLI package or NLP package, based on JSON field "mode"
   def receive = {
     case Open(ws, hs) =>
       clients += ws
@@ -25,27 +26,18 @@ class ChatBaseActor extends Actor with ActorLogging {
       val ip = ws.getRemoteSocketAddress.getAddress.toString
       log.info("ws remote socket address: " + ws.getRemoteSocketAddress.getAddress.toString)
 
-      //2. Check existing cookie
-      if (hs.hasFieldValue("Cookie")) {
-        val cookie = hs.getFieldValue("Cookie")
-        //have our cookie
-        if(RawCookieUtil.parse(cookie).nonEmpty){
-          //check database for the cookie value, if the browser has the cookie
-          //match UUID with IP address
+      //2. if any username is being sent over
+      //client side js checks on cookie
 
-//          User.getByTokenAndIP(RawCookieUtil.parse(cookie).get, ip)
 
-        }else{ //don't have our cookie
-
-        }
-      }
-
-//      ws.send("You are connected now buffoon!")
     case Message(ws, msg) =>
 
   }
 }
 
-object ChatBaseProtocol {
+object ChatBaseMsg {
+
+  case class Send()
+  case class InternalError()
 
 }

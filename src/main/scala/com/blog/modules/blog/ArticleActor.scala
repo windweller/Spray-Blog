@@ -1,10 +1,16 @@
 package com.blog.modules.blog
 
-/**
- * Created by Aimingnie on 10/23/14.
- */
+import akka.actor.{ActorLogging, Actor}
+
 class ArticleActor extends Actor with ActorLogging {
+  import ArticleMsg._
+
   def receive = {
     case _ => log.info("...")
   }
+}
+
+//This object stores message protocols
+object ArticleMsg {
+
 }
