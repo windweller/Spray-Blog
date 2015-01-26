@@ -1,8 +1,8 @@
-#Project Noah [![Build Status](https://travis-ci.org/windweller/Spray-Blog.svg?branch=Spray-Blog)](https://travis-ci.org/windweller/Spray-Blog)
+#Project Sally [![Build Status](https://travis-ci.org/windweller/Spray-Blog.svg?branch=Spray-Blog)](https://travis-ci.org/windweller/Spray-Blog)
 
-Project Noah is the project to reclaim the control for the users. It allows users to store tons of personal information, and provides an API for 3rd-party applications to access. 
+Project Sally is the project to reclaim the control for the users. It allows users to store tons of personal information, and provides an API for 3rd-party applications to access. 
 
-The first phase of Project Noah is the birth of Sally, the first personal AI assitant.
+The first phase of Project Sally is the birth of Sally, the first personal AI assitant.
 
 Sally is not a library, but a collection of services built upon natural language processing. Since it is the beta version, we call it Sally. Nowadays, people see natural language processing as an "add-on", but it should not be. Natural language processing should be used as a foundation and build everything else on top of it. However, due to time and technology constraint, Sally can be treated as a blogging platform (but is nothing like Wordpress or NodeJS powered blogging platforms).
 
