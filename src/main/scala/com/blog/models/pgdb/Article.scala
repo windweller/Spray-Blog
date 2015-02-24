@@ -1,17 +1,15 @@
 package com.blog.models.pgdb
 
 import java.sql.Timestamp
-import scala.slick.driver.PostgresDriver.simple._
-
-/**
- * Created by Aimingnie on 4/12/14.
- */
-object Article {
 
 case class Article(id: Option[Int] = None, title: String, author: String, content: String,
                    modifiedTime: Option[Timestamp] = None, createdTime: Option[Timestamp] = None,
                    pinned: Boolean = false, isDraft: Boolean = false, language: Byte = 0,
                    coverImage: Option[String] = None)
+
+trait ArticleComponent {
+
+  import pgSlickPostgresDriver.simple._
 
 class ArticleTable(tag: Tag) extends Table[Article](tag, "Article") {
 

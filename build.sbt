@@ -27,11 +27,11 @@ libraryDependencies ++= {
     "com.typesafe.akka"   %%  "akka-testkit"  % akkaV   % "test",
     "org.scalatest"       %% "scalatest"       % "2.1.5"  % "test",
     //add-ons
-    "org.scalanlp"        %   "breeze_2.10"   % "0.7",
     "com.github.nscala-time" %% "nscala-time" % "1.2.0",
     //database
-    "com.typesafe.slick" %%  "slick"         % "2.0.2",
-    "postgresql" % "postgresql" % "9.1-901.jdbc4"
+    "com.typesafe.slick" %%  "slick"         % "2.1.0",
+    "postgresql" % "postgresql" % "9.1-901.jdbc4",
+    "com.github.tminglei" %% "slick-pg" % "0.7.0"
   )
 }
 

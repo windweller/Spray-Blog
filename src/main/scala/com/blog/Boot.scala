@@ -5,18 +5,17 @@ import akka.io.{IO, Tcp}
 import spray.can.Http
 import com.blog.api._
 
-//import scala.slick.driver.MySQLDriver.simple._
-import models._
+import models.pgdb.DAL
 
 object Boot extends App with MainActors with RootApi {
 
   //construct database tables; it needs improvement
-  //  DAL.databaseInit()
+  DAL.databaseInit()
 
   implicit lazy val system = ActorSystem("spray-blog")
 
   private val ws = new WsServer(Config.portWs)
-  ws.forResource("/chat/ws", Some(chatActor))
+  ws.forResource("/nlp/ws", Some(inputActor))
   ws.start()
 
   sys.addShutdownHook({system.shutdown(); ws.stop()})

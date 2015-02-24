@@ -1,8 +1,9 @@
-#Project Noah [![Build Status](https://travis-ci.org/windweller/Spray-Blog.svg?branch=Spray-Blog)](https://travis-ci.org/windweller/Spray-Blog)
+#Project Aiden [![Build Status](https://travis-ci.org/windweller/Spray-Blog.svg?branch=Spray-Blog)](https://travis-ci.org/windweller/Spray-Blog)
 
-Project Noah is the project to reclaim the control for the users. It allows users to store tons of personal information, and provides an API for 3rd-party applications to access. 
+Project Aiden is to build a NLP interface that contains open-source underline modules, specifically designed
+for online tasks.
 
-The first phase of Project Noah is the birth of Sally, the first personal AI assitant.
+The first phase of Project Aiden is the birth of Sally, the first personal AI assitant.
 
 Sally is not a library, but a collection of services built upon natural language processing. Since it is the beta version, we call it Sally. Nowadays, people see natural language processing as an "add-on", but it should not be. Natural language processing should be used as a foundation and build everything else on top of it. However, due to time and technology constraint, Sally can be treated as a blogging platform (but is nothing like Wordpress or NodeJS powered blogging platforms).
 
@@ -12,15 +13,14 @@ We welcome anyone who is interested. You can find contact email at the bottom of
 
 ##Module
 There are a list of modules that are being developed, or planned on building in the near future.
-* Blogging Module - **active** | **being developed** 
-* Computation Module (Octave) - **being developed**
-* Conversation Module - **planned**
+* Blogging Module - **planned** | **in development**
+* Conversation Module - **planned** | **in development**
 * Knowledge Search Module - **planned**
   - js supported chart data display
+  - does Sally know this person?
 * Geolocation Module - **planned**
-* File Management Module - **planned**
-* Social Platform Management Module - **planned**
-* Security Module - **planned**
+* Social Platform Integration Module - **planned**
+* Information Access Module - **planned**
 * Personality Module - **planned**
 
 ##Architectual Design
@@ -33,8 +33,8 @@ The view folder is temporarily removed and may be created as a different github 
 
 ##Dependency
 Right now there are libraries and frameworks that Sally depends upon:
-* [Jacana](https://code.google.com/p/jacana/): from Google code, handles part of Sally's Knowledge Search functionality, connecting to [FreeBase](freebase.com).
 * [CRF Tagger](https://github.com/tomtung/nlp-class/tree/master/hw4): developed by @tomgtung using Breeze. It will be modified to better suit the functionality of Sally in the future.
-* [Octave](http://www.gnu.org/software/octave/): Linear algebra library developed by GNU. Sally provides a frontend integration of native Octave syntax and render output. Sally will support plotting in the future, if possible.
+* [ClearNLP](http://www.clearnlp.com/): developed by my mentor Dr. Jinho Choi.
+* Other Machine Learning libraries
 
 Contact: anie@emory.edu

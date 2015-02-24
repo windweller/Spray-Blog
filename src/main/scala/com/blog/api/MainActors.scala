@@ -2,7 +2,7 @@ package com.blog.api
 
 import akka.actor.Props
 import com.blog.modules.blog._
-import com.blog.modules.chat._
+import com.blog.modules.nlp.inputActor
 import com.blog.modules.user._
 
 /**
@@ -14,6 +14,5 @@ trait MainActors {
 
   lazy val articleActor = system.actorOf(Props[ArticleActor], "article")
   lazy val userActor = system.actorOf(Props[UserActor], "user")
-  lazy val chatActor = system.actorOf(Props[ChatBaseActor], "chatChannel")
-
+  lazy val inputActor = system.actorOf(Props[inputActor], "input")
 }

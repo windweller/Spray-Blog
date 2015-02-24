@@ -1,28 +1,29 @@
 package com.blog.models.pgdb
 
-//import scala.slick.driver.MySQLDriver.simple._
 
 import com.blog.Config._
 
-import scala.slick.driver.PostgresDriver.simple._
 import scala.slick.jdbc.meta.MTable
 
 
-object DAL {
+class DAL extends ArticleComponent with UserComponent{
 
-  //either db.mysql._
-  //or db.postgresql._
+  import pgSlickPostgresDriver.simple._
 
   val db = Database.forURL(url = dbURL, user = dbUser, password= dbPassword, driver = dbDriver)
 
-
   def databaseInit() {
+
     db.withSession{ implicit session =>
-      if (MTable.getTables("Article").list().isEmpty) {
-        Article.articles.ddl.create
-      } else if (MTable.getTables("User").list().isEmpty) {
-        User.users.ddl.create
+
+      if (MTable.getTables("Article").list(session).isEmpty) {
+        articles.ddl.create
+      } else if (MTable.getTables("User").list(session).isEmpty) {
+        users.ddl.create
       }
+
     }
   }
 }
+
+object DAL extends DAL
