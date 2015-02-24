@@ -5,12 +5,6 @@ for online tasks.
 
 The first phase of Project Aiden is the birth of Sally, the first personal AI assitant.
 
-Sally is not a library, but a collection of services built upon natural language processing. Since it is the beta version, we call it Sally. Nowadays, people see natural language processing as an "add-on", but it should not be. Natural language processing should be used as a foundation and build everything else on top of it. However, due to time and technology constraint, Sally can be treated as a blogging platform (but is nothing like Wordpress or NodeJS powered blogging platforms).
-
-Sally has a super modular design. All modules (except core modules) can be changed based on user's preference. Currently Sally is built upon Spray (the HTTP server) and Scala. The interface of Sally is composed of HTML with JavaScript (jQuery) providing asynchronous service.
-
-We welcome anyone who is interested. You can find contact email at the bottom of this file. 
-
 ##Module
 There are a list of modules that are being developed, or planned on building in the near future.
 * Blogging Module - **planned** | **in development**
