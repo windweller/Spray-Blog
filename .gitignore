@@ -5,6 +5,7 @@ target/
 lib_managed/
 src_managed/
 test-output/
+/node_modules/
 /views
 *.jar
 *.iml
